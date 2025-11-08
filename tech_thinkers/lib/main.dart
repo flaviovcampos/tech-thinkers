@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:tech_thinkers/presentation/welcome.dart';
+import 'routes/app_routes.dart';
+import 'theme/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const TechThinkersApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class TechThinkersApp extends StatelessWidget {
+  const TechThinkersApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: 'Tech Thinkers',
+      theme: AppTheme.lightTheme,
+      routerConfig: router, // 🔥 connect GoRouter here
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const Welcome(),
     );
   }
 }
